@@ -7,7 +7,7 @@ const clearBtn = document.getElementById('btn-clear');
 const currentResultOutput = document.getElementById('current-result');
 const currentCalculationOutput = document.getElementById('current-calculation');
 
-const outputResult = (result, text) {
+const outputResult = (result, text) => {
     currentResultOutput.textContent = result;
     currentCalculationOutput.textContent = text;
 };
