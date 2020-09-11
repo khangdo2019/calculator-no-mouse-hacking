@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="/asset/vendor.js" defer></script>
     <script src="/asset/app.js" defer></script>
-    <script src="/node_modules/mousetrap/mousetrap.min.js" defer></script>
-    <script src="/asset/mousetrap.js"></script>
+    <script src="/asset/modal.js" async></script>
     <link rel="stylesheet" href="/asset/style.css">
     <title>Converter No Mouse Hacking</title>
 </head>
@@ -16,12 +15,57 @@
     <header>
         <h1>A Converter from Pound</h1>
     </header>
+    <section class="hotkey">
+        <div id="backdrop"></div>
+        <div class="modal" id="add-modal">
+            <div class="model-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Hotkey</th>
+                            <th scope="col">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Ctrl + Shift + 5</th>
+                            <td>Close/Open Hotkey</td>
+                        </tr>
+                        <tr>
+                            <th>Space</th>
+                            <td>Input number</td>
+                        </tr>
+                        <tr>
+                            <th>Ctrl + Shift + 1</th>
+                            <td>Convert to kilogram</td>
+                        </tr>
+                        <tr>
+                            <th>Ctrl + Shift + 2</th>
+                            <td>Convert to gram</td>
+                        </tr>
+                        <tr>
+                            <th>Ctrl + Shift + 3</th>
+                            <td>Convert to ounce</td>
+                        </tr>
+                        <tr>
+                            <th>Ctrl + Shift + 4</th>
+                            <td>Clear result</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <div class="modal-action">
+            <button id="close-modal">Close</button>
+        </div>
+    </section>
     <section id="results">
         <h2 id="current-calculation">0</h2>
         <h2>Result: <span id="current-result">0</span></h2>
     </section>
     <section id="calculator">
-        <label for="input-number">Enter your weight in pound</label>
+        <label for="input-number" id="input-label">Enter your weight in pound</label>
         <input type="number" id="input-number" />
         <div id="calc-actions">
             <button type="button" id="btn-kilogram">kilogram</button>
@@ -30,13 +74,6 @@
             <button type="button" id="btn-clear">Clear</button>
         </div>
     </section>
-    <script>
-        // document.onkeydown = function(e) {
-        //     if (e.ctrlKey && e.shiftKey) {
-        //         console.log('Ctrl + Shift + 1');
-        //     }
-        // };
-    </script>
 </body>
 
 </html>

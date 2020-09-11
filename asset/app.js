@@ -1,9 +1,21 @@
+const addHotkeyModal = document.getElementById('add-modal');
+const addBackdrop = document.getElementById('backdrop');
+const closeModalBtn = document.querySelector('#close-modal');
+
 const defaultResult = 0;
 let currentResult = defaultResult;
 
 const POUND_TO_KILOGRAM = 0.453592;
 const POUND_TO_GRAM = 453.592;
 const POUND_TO_OUNCE = 16;
+
+const showHotkeyModal = () => {
+    addHotkeyModal.classList.add('visible');
+    addBackdrop.classList.add('visible');
+    closeModalBtn.classList.add('visible');
+};
+
+showHotkeyModal();
 
 // Getting user input
 const getUserNumberInput = () => {
@@ -57,7 +69,7 @@ const clearResult = () => {
     outputResult(currentResult, enteredNumber);
 };
 
-// Hotkey 
+// Hotkey - No Mouse Hacking
 document.onkeydown = function(e) {
     if (e.ctrlKey && e.shiftKey && e.which == 49) {
         calculateResult('KILOGRAM'); // Ctrl + Shift + 1
@@ -68,7 +80,9 @@ document.onkeydown = function(e) {
     } else if (e.ctrlKey && e.shiftKey && e.which == 52) {
         clearResult(); // Ctrl + Shift + 4
     } else if (e.which == 32) {
-        userInput.focus();
+        userInput.focus(); // Focus on the input field
+    } else if (e.ctrlKey && e.shiftKey && e.which == 53) {
+        changeHotkeyModal();
     }
 };
 
