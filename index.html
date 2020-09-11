@@ -4,9 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="asset/vendor.js" defer></script>
-    <script src="asset/app.js" defer></script>
-    <link rel="stylesheet" href="asset/style.css">
+    <script src="/asset/vendor.js" defer></script>
+    <script src="/asset/app.js" defer></script>
+    <script src="/node_modules/mousetrap/mousetrap.min.js" defer></script>
+    <script src="/asset/mousetrap.js"></script>
+    <link rel="stylesheet" href="/asset/style.css">
     <title>Converter No Mouse Hacking</title>
 </head>
 
@@ -28,6 +30,13 @@
             <button type="button" id="btn-clear">Clear</button>
         </div>
     </section>
+    <script>
+        // document.onkeydown = function(e) {
+        //     if (e.ctrlKey && e.shiftKey) {
+        //         console.log('Ctrl + Shift + 1');
+        //     }
+        // };
+    </script>
 </body>
 
 </html>
